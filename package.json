@@ -1,0 +1,28 @@
+{
+  "name": "starterjs-ui",
+  "version": "1.0.0",
+  "description": "A simple front-end JavaScript starter kit",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theafn/starterjs-ui.git"
+  },
+  "keywords": [
+    "javascript",
+    "starter",
+    "kit",
+    "boilerplate",
+    "javascript",
+    "development",
+    "environment"
+  ],
+  "author": "afnlite",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theafn/starterjs-ui/issues"
+  },
+  "homepage": "https://github.com/theafn/starterjs-ui#readme"
+}
