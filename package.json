@@ -4,7 +4,9 @@
   "description": "A simple front-end JavaScript starter kit",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-security": "nsp check",
+    "start": "npm run test-security && babel-node scripts/server.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,7 @@
     "eslint": "^4.18.1",
     "express": "^4.16.2",
     "jest": "^22.4.2",
+    "nsp": "^3.2.1",
     "opn": "^5.2.0",
     "style-loader": "^0.20.2",
     "surge": "^0.19.0",
