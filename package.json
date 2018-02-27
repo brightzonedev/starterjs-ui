@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test-security": "nsp check",
-    "start": "npm run test-security && babel-node scripts/server.js"
+    "start": "npm run test-security && npm run lint && babel-node scripts/server.js",
+    "lint": "eslint webpack.* scripts src --fix --color"
   },
   "repository": {
     "type": "git",
