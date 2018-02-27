@@ -41,6 +41,7 @@
     "opn": "^5.2.0",
     "style-loader": "^0.20.2",
     "surge": "^0.19.0",
-    "webpack": "^4.0.0"
+    "webpack": "^4.0.0",
+    "webpack-dev-middleware": "^2.0.6"
   }
 }
