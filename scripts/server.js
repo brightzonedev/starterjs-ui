@@ -2,6 +2,7 @@ import express from 'express';
 import opn from 'opn';
 import path from 'path';
 import webpack from 'webpack';
+import chalk from 'chalk';
 
 import config from '../webpack.config.dev';
 
@@ -22,6 +23,8 @@ app.listen(port, err => {
     if (err) {
         console.error(err);
     } else {
+        console.log(chalk.blue('Development environment is running at:'));
+        console.log(chalk.green('http://localhost:' + port));
         opn('http://localhost:' + port);
     }
 });
