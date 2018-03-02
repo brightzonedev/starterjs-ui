@@ -7,7 +7,11 @@
     "test": "jest",
     "test-security": "nsp check",
     "start": "npm run test-security && npm run lint && babel-node scripts/server.js",
-    "lint": "eslint webpack.* scripts src --fix --color"
+    "lint": "eslint webpack.* scripts src --fix --color",
+    "clean-dist": "rm -rf ./dist && mkdir dist",
+    "prebuild": "npm run clean-dist && npm run lint",
+    "build": "babel-node scripts/build.js",
+    "postbuild": "babel-node scripts/productionTestServer.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +38,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "chalk": "^2.3.1",
+    "compression": "^1.7.2",
     "css-loader": "^0.28.10",
     "eslint": "^4.18.1",
     "express": "^4.16.2",
