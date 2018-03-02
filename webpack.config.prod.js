@@ -1,4 +1,5 @@
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
 	mode: 'production',
@@ -12,6 +13,21 @@ export default {
 		path: path.resolve(__dirname, 'dist')
 	},
 	plugins: [
+		new HtmlWebpackPlugin({
+			template: 'src/index.html',
+			inject: true,
+			minify: {
+				minifyCSS: true,
+				minifyJS: true,
+				minifyURLs: true,
+				removeComments: true,
+				removeRedundantAttributes: true,
+				removeEmptyAttributes: true,
+				keepClosingSlash: true,
+				collapseWhitespace: true,
+				conservativeCollapse: true,
+			}
+		})
 	],
 	module: {
 		rules: [
