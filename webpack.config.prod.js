@@ -1,5 +1,6 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import WebpackMd5Hash from 'webpack-md5-hash';
 
 export default {
 	mode: 'production',
@@ -9,11 +10,13 @@ export default {
 	},
 	target: 'web',
 	output: {
-		filename: '[name].js',
+		filename: '[name].[chunkhash].js',
 		publicPath: '/',
 		path: path.resolve(__dirname, 'dist')
 	},
 	plugins: [
+		new WebpackMd5Hash(),
+		
 		new HtmlWebpackPlugin({
 			template: 'src/index.html',
 			inject: true,
