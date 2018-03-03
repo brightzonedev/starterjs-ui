@@ -3,12 +3,13 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
 	mode: 'production',
-	entry: [
-		path.resolve(__dirname, 'src/index')
-	],
+	entry: {
+		vendor: path.resolve(__dirname, 'src/vendor'),
+		main: path.resolve(__dirname, 'src/index'),
+	},
 	target: 'web',
 	output: {
-		filename: 'bundle.js',
+		filename: '[name].js',
 		publicPath: '/',
 		path: path.resolve(__dirname, 'dist')
 	},
@@ -50,5 +51,10 @@ export default {
 				]
 			}
 		]
-	}
+	},
+	optimization: {
+		splitChunks: {
+			name: 'vendor'
+		}
+	},
 };
